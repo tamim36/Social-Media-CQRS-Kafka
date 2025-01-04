@@ -9,6 +9,7 @@ services:
       - "zookeeper_data:/bitnami"
     environment:
       - ALLOW_ANONYMOUS_LOGIN=yes
+
   kafka:
     image: docker.io/bitnami/kafka:3.5
     container_name: kafka
@@ -25,15 +26,37 @@ services:
       - KAFKA_CFG_AUTO_CREATE_TOPICS_ENABLE=true
     depends_on:
       - zookeeper
+
+  mongo:
+    image: mongo:latest
+    container_name: mongo-container
+    ports:
+      - "27017:27017"
+    restart: always
+    volumes:
+      - mongodb_data_container:/data/db
+
+  sql-server:
+    image: mcr.microsoft.com/mssql/server:2017-latest-ubuntu
+    container_name: sql-container
+    ports:
+      - "1434:1433"
+    restart: always
+    environment:
+      ACCEPT_EULA: "Y"
+      SA_PASSWORD: "notA##SimpleP20ssor25d"
+      MSSQL_PID: "Express"
       
 volumes:
   zookeeper_data:
-    driver: local
+
   kafka_data:
+    driver: local
+  mongodb_data_container:
     driver: local
    
 networks:
   default:    
     name: socialmediacqrskafka
-    external: true
+    driver: bridge
     
