@@ -1,3 +1,10 @@
+# services:
+#   post.query.api:
+#    image: ${DOCKER_REGISTRY-}postqueryapi
+#   build:
+#     context: .
+#     dockerfile: src/SocialMedia-Post/Post.Query/Post.Query.Api/Dockerfile
+
 services:
   zookeeper:
     image: docker.io/bitnami/zookeeper:3.9
@@ -60,3 +67,4 @@ networks:
     name: socialmediacqrskafka
     driver: bridge
     
+
