@@ -1,4 +1,6 @@
-﻿namespace Post.Command.Api.DTOs
+﻿using Post.Common.DTOs;
+
+namespace Post.Command.Api.DTOs
 {
     public class NewPostResponse : BaseResponse
     {

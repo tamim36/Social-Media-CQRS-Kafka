@@ -1,6 +1,8 @@
 ﻿using CQRS.Core.Exceptions;
 using CQRS.Core.Infrastructure;
 using Microsoft.AspNetCore.Mvc;
+using Post.Command.Api.Commands;
+using Post.Common.DTOs;
 
 namespace Post.Command.Api.Controllers
 {
@@ -18,7 +20,7 @@ namespace Post.Command.Api.Controllers
         }
 
         [HttpPut("{id}")]
-        public async Task<ActionResult> EditMessageAsync(Guid id, EditMessageCommand command)
+        public async Task<ActionResult> EditMessageAsync(Guid id, EditPostCommand command)
         {
             try
             {

@@ -1,5 +1,8 @@
 ﻿using CQRS.Core.Infrastructure;
 using Microsoft.AspNetCore.Mvc;
+using Post.Command.Api.Commands;
+using Post.Command.Api.DTOs;
+using Post.Common.DTOs;
 
 namespace Post.Command.Api.Controllers
 {
@@ -17,7 +20,7 @@ namespace Post.Command.Api.Controllers
         }
 
         [HttpPost]
-        public async Task<ActionResult> NewPostAsync(NewPostCommand command)
+        public async Task<ActionResult> NewPostAsync(AddPostCommand command)
         {
             var id = Guid.NewGuid();
             try

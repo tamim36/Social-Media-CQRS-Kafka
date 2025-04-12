@@ -1,6 +1,7 @@
 ﻿using CQRS.Core.Infrastructure;
 using Microsoft.AspNetCore.Mvc;
 using Post.Command.Api.Commands;
+using Post.Common.DTOs;
 
 namespace Post.Command.Api.Controllers
 {
