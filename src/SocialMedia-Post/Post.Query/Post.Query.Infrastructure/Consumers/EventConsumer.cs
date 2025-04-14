@@ -2,6 +2,8 @@
 using CQRS.Core.Consumers;
 using CQRS.Core.Events;
 using Microsoft.Extensions.Options;
+using Post.Query.Infrastructure.Converters;
+using Post.Query.Infrastructure.Handlers;
 using System.Text.Json;
 
 namespace Post.Query.Infrastructure.Consumers

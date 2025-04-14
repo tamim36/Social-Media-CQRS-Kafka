@@ -1,6 +1,9 @@
 ﻿using CQRS.Core.Infrastructure;
 using Microsoft.AspNetCore.Mvc;
 using Post.Common.DTOs;
+using Post.Query.Api.DTOs;
+using Post.Query.Api.Queries;
+using Post.Query.Domain.Entities;
 
 namespace Post.Query.Api.Controllers
 {
